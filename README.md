@@ -37,7 +37,7 @@ Nuestro sistema está optimizado para:
    - Importa el archivo SQL en tu base de datos MySQL.
 3. **Inicia el servidor local:**
    - Coloca los archivos del proyecto en la carpeta `htdocs`.
-   - Accede al sistema desde tu navegador en `http://localhost/clases`.
+   - Accede al sistema desde tu navegador en `http://localhost/view/clases`.
 
 ---
 

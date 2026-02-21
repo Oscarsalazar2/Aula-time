@@ -8,87 +8,72 @@ $errormsg = $usuarioController->autenticarController();
 
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/estilo.css" />
     <link rel="icon" href="img/logo.ico">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AulaTime</title>
-
-    <style type="text/css">
-        body,
-        td,
-        th {
-            font-family: "Time New Roman", Time New Roman;
-        }
-    </style>
 </head>
 
-<body>
-    <form action="login.php" method="post" name="Formulario">
+<body class="login-body">
+    <div class="login-wrapper">
+        <div class="login-card">
 
-        <div id="content">
-
-            <div id="esquerdo">
-                <img src="img/imagen (1).png" width="325" height="335" style="display: block; margin: 0 auto;" />
+            <div class="login-left">
+                <img src="img/imagen (1).png" alt="AulaTime" />
                 <div id="aviso">
-
-                    <strong>
-                        <h3>HAZ CLIC Y RESERVA</h3>
-                    </strong>
-                    La forma más pr&aacute;ctica y simple de reservar salones, laborat&oacute;rios y otros espacios.
+                    <h3>HAZ CLIC Y RESERVA</h3>
+                    La forma más práctica y simple de reservar salones, laboratorios y otros espacios.
                 </div>
-
             </div>
 
-            <div id="direito">
+            <div class="login-right">
+                <img src="img/imagen.png" alt="Sistema de Reservas de Salas de Aula" class="login-logo" />
+                <p class="login-version">Versión <strong>1.0</strong></p>
 
-                <br />
-                <br />
-                <img src="img/imagen.png" alt="Sistema de Reservas de Salas de Aula" title="Sistema de Reservas de Salas de Aula" width="310" height="72" />
-                <br />
-                <br />
-                Version <strong>1.0</strong>&nbsp;<br />
-                <span style="color:#900"><?php echo $errormsg; ?></span><br />
+                <?php if ($errormsg): ?>
+                    <p class="login-error"><?php echo htmlspecialchars($errormsg); ?></p>
+                <?php endif; ?>
 
-                <input type="text" name="n_control" id="n_control" placeholder="Número de Control" />
-                <br />
-                <br />
+                <form action="login.php" method="post" name="Formulario">
+                    <div class="login-field">
+                        <label for="n_control">Número de Control</label>
+                        <input type="text" name="n_control" id="n_control" placeholder="Número de Control" autocomplete="username" />
+                    </div>
 
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" />
-                    <button type="button" id="togglePassword" onclick="togglePasswordVisibility()">👁️</button>
-                </div>
-                <br />
-                <br />
+                    <div class="login-field">
+                        <label for="contraseña">Contraseña</label>
+                        <div class="password-wrapper">
+                            <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña" autocomplete="current-password" />
+                            <button type="button" id="togglePassword" class="toggle-password" onclick="togglePasswordVisibility()" aria-label="Mostrar/ocultar contraseña">👁️</button>
+                        </div>
+                    </div>
 
-                <input type="submit" name="entrar" value="Entrar" class="btn1" />
-
+                    <input type="submit" name="entrar" value="Entrar" class="btn-login" />
+                </form>
             </div>
+
         </div>
 
         <div id="rodape">
-
-            El sistema ha sido creado por los alumnos del <a href="https://www.matamoros.tecnm.mx/">Instituto Tecnologico de Matamoros</a>
-
+            El sistema ha sido creado por los alumnos del <a href="https://www.matamoros.tecnm.mx/">Instituto Tecnológico de Matamoros</a>
         </div>
-
-    </form>
+    </div>
 
     <script>
         function togglePasswordVisibility() {
             const passwordField = document.getElementById('contraseña');
             const toggleButton = document.getElementById('togglePassword');
-
-            // Cambiar entre 'password' y 'text'
             if (passwordField.type === 'password') {
                 passwordField.type = 'text';
-                toggleButton.textContent = '🙈'; // Cambiar ícono a "ocultar"
+                toggleButton.textContent = '🙈';
             } else {
                 passwordField.type = 'password';
-                toggleButton.textContent = '👁️'; // Cambiar ícono a "mostrar"
+                toggleButton.textContent = '👁️';
             }
         }
     </script>

@@ -1,57 +1,206 @@
 ﻿/* fuente general */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-/* Login */
-#content {
-  width: 880px;
-  margin: 0 auto;
-  height: 490px;
-  margin-top: 80px;
+/* ===== Login ===== */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  overflow: auto;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-card {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.login-left {
+  flex: 1 1 320px;
+  background-color: #2c2c2c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 30px;
+}
+
+.login-left img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
   display: block;
 }
 
 #aviso {
-  background-color: #000000;
+  background-color: #1a1a1a;
   color: #ffffff;
-  width: 458px;
-  height: 150px;
-  font-size: 16px;
-  line-height: 25px;
-  padding-left: 20px;
-}
-
-#content {
-  width: 880px;
-  margin: 0 auto;
-  height: 490px;
-  margin-top: 80px;
-  display: block;
-}
-#direito {
-  width: 320px;
-  float: right;
-  height: 320px;
-}
-#esquerdo {
-  width: 478px;
-  float: left;
-  height: 475px;
+  font-size: 15px;
+  line-height: 24px;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #aviso h3 {
-  font-size: 30px;
-  margin: 0px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
-#rodape {
-  border-top: 1px solid #eee;
-  width: 880px;
-  margin: 0 auto;
-  text-align: center;
+
+.login-right {
+  flex: 1 1 280px;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.login-logo {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.login-version {
+  color: #888;
+  font-size: 13px;
+  margin: 0 0 16px 0;
+}
+
+.login-error {
+  color: #c0392b;
+  background-color: #fdecea;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.login-field {
+  margin-bottom: 20px;
+}
+
+.login-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.login-field input[type="text"],
+.login-field input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  transition: border-color 0.25s;
+  height: auto;
+  margin: 0;
+}
+
+.login-field input[type="text"]:focus,
+.login-field input[type="password"]:focus {
+  outline: none;
+  border-color: #2c73a8;
+  box-shadow: 0 0 0 3px rgba(44, 115, 168, 0.15);
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.password-wrapper input[type="password"],
+.password-wrapper input[type="text"] {
+  flex: 1;
+}
+
+.toggle-password {
+  background: none;
+  border: 1px solid #d1d9e0;
+  border-radius: 6px;
   padding: 10px;
-  color: #666666;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  color: #555;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+}
+
+.toggle-password:hover {
+  background-color: #f0f4f8;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #2c73a8;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  margin-top: 8px;
+  height: auto;
+}
+
+.btn-login:hover {
+  background-color: #245d86;
+}
+
+#rodape {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 20px;
+  text-align: center;
+  padding: 14px 10px;
+  color: #888;
   font-size: 12px;
+}
+
+#rodape a {
+  color: #2c73a8;
+  text-decoration: none;
+}
+
+#rodape a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .login-left {
+    padding: 30px 20px;
+  }
+  .login-right {
+    padding: 30px 24px;
+  }
 }
 
 /* Estructura General */
@@ -61,7 +210,6 @@ body {
   margin: 0px;
   font-family: "Open Sans", sans-serif;
   color: #4e4e4e;
-  overflow: hidden;
   background-color: #ffffff;
 }
 h3 {
@@ -80,7 +228,7 @@ h3 {
   margin: 0px;
 }
 .menu li {
-  padding: 15px;
+  padding: 0;
   margin: 0px;
   color: #ffffff;
   list-style: none;
@@ -92,6 +240,8 @@ h3 {
   background-color: #d4d4d4;
 }
 .menu a {
+  display: block;
+  padding: 15px;
   color: #ffffff;
   text-decoration: none;
 }

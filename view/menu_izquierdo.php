@@ -2,13 +2,13 @@
 
 <ul>
 
-   <a href="index.php"><li>Inicio</li></a>
-   <a href="sala_list.php"><li>Salones</li></a>
-   <a href="periodo_list.php"><li>Horas</li></a>
-   <a href="reportes.php"><li>Reportes</li></a>
-   <a href="usuario_list.php"> <li>Usuarios</li></a>
-   <a href="info.php"> <li>Información</li></a>
-   <a href="logout.php"> <li>Cerrar Sesión</li></a>
+   <li><a href="index.php">Inicio</a></li>
+   <li><a href="sala_list.php">Salones</a></li>
+   <li><a href="periodo_list.php">Horas</a></li>
+   <li><a href="reportes.php">Reportes</a></li>
+   <li><a href="usuario_list.php">Usuarios</a></li>
+   <li><a href="info.php">Información</a></li>
+   <li><a href="logout.php">Cerrar Sesión</a></li>
 
 </ul>
 
